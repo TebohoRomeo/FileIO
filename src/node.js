@@ -1,3 +1,6 @@
+// Author: Teboho Romeo Lekhalo
+'use strict';
+
 const fs = require('fs');
 
 class Visitor {
@@ -10,7 +13,7 @@ class Visitor {
     this.Assistance = Assistance;
   }
 
-  async save() {
+  save() {
     fs.writeFile(
       'visitor_' + this.fullname + '.json',
       JSON.stringify(this, null, 4),
