@@ -17,42 +17,39 @@ class Visitor {
     fs.writeFile(
       'visitor_' + this.fullname + '.json',
       JSON.stringify(this, null, 4),
-      (err) => {
+      function(err) {
         if (err) {
           throw err;
         }
       }
     );
-
 
     // return;
   }
 
   load() {
-    fs.readFile(
-      'visitor_' + this.fullname + '.json',
-      'utf8',
-      
-      function(err, info) {
-        if (err) {
-          throw err;
-        } else {
-            console.log(info,' here i am');
-        }
+    fs.readFile('visitor_' + this.fullname + '.json', 'utf8', function(
+      err,
+      info
+    ) {
+      if (err) {
+        throw err;
+      } else {
+        console.log(info, ' here i am');
       }
-    );
+    });
   }
 }
 
 let lebo = new Visitor(
-    'Lebo Mphago',
-    25,
-    '12/12/12',
-    '12:12',
-    'Was wonderful',
-    'Romeo'
+  'Lebo Mphago',
+  25,
+  '12/12/12',
+  '12:12',
+  'Was wonderful',
+  'Romeo'
 );
-console.log(lebo.save(),' for saving information');
+console.log(lebo.save(), ' for saving information');
 console.log(lebo.load(), 'for pulling the information');
 
 module.exports = Visitor;
