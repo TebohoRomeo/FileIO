@@ -11,7 +11,6 @@ class Visitor {
   }
 
   async save() {
-    // return this.fullname + this.age;
     fs.writeFile(
       'visitor_' + this.fullname + '.json',
       JSON.stringify(this, null, 4),
@@ -21,6 +20,9 @@ class Visitor {
         }
       }
     );
+
+
+    // return;
   }
 
   load() {
@@ -28,11 +30,11 @@ class Visitor {
       'visitor_' + this.fullname + '.json',
       'utf8',
       
-      function(err, data) {
+      function(err, info) {
         if (err) {
           throw err;
         } else {
-            console.log(data);
+            console.log(info,' here i am');
         }
       }
     );
@@ -40,7 +42,14 @@ class Visitor {
 }
 
 let lebo = new Visitor(
-    'Le Mphago'
+    'Lebo Mphago',
+    25,
+    '12/12/12',
+    '12:12',
+    'Was wonderful',
+    'Romeo'
 );
-console.log(lebo.save());
-console.log(lebo.load());
+console.log(lebo.save(),' for saving information');
+console.log(lebo.load(), 'for pulling the information');
+
+module.exports = Visitor;
