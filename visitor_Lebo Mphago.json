@@ -1,8 +1,8 @@
 {
     "fullname": "Lebo Mphago",
     "age": 25,
-    "date_visit": 0.08333333333333333,
-    "time_visit": 1212,
+    "date_visit": "12/12/12",
+    "time_visit": "12:12",
     "comments": "Was wonderful",
     "Assistance": "Romeo"
 }

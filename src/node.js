@@ -39,15 +39,4 @@ class Visitor {
   }
 }
 
-// let lebo = new Visitor(
-//   'Lebo Mphago',
-//   25,
-//   '12/12/12',
-//   '12:12',
-//   'Was wonderful',
-//   'Romeo'
-// );
-// console.log(lebo.save(), ' for saving information');
-// console.log(lebo.load(), 'for pulling the information');
-
 module.exports = Visitor;
