@@ -20,8 +20,8 @@ describe('function save()', () => {
     lebo.save();
 
     fs.readFile('visitor_Lebo Mphago.json', 'utf8', function(err, info) {
-      // if (err) throw err;
-      // else {
+      if (err) throw err;
+      else {
         let readData = JSON.parse(info);
         expect(readData.fullName).toEqual('Le Mpgago');
         expect(readData.age).toEqual(25);
@@ -29,7 +29,7 @@ describe('function save()', () => {
         expect(readData.time_visit).toEqual('12:12');
         expect(readData.comments).toEqual('Was wonderful');
         expect(readData.Assistance).toEqual('Romeo');
-      // }
+      }
     });
   });
 });
