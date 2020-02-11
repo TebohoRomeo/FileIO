@@ -1,6 +1,6 @@
 let Visitor = require('../src/node');
 
-describe('function save()', () => {
+describe('function save()', function() {
   let lebo = new Visitor(
     'Lebo Mphago',
     25,
@@ -14,7 +14,7 @@ describe('function save()', () => {
     expect(lebo.save).toBeDefined();
   });
 
-  fit("writes a visitor's content to a respectively named file", function() {
+  it("writes a visitor's content to a respectively named file", function() {
     fs = require('fs');
 
     lebo.save();
@@ -26,7 +26,7 @@ describe('function save()', () => {
         expect(readData.fullName).toEqual('Le Mpgago');
         expect(readData.age).toEqual(25);
         expect(readData.date_visit).toEqual('12/12/12');
-        expect(readData.time_visit).toEqual('12:12');
+        expect(readData.time_visit).toEqual('1212');
         expect(readData.comments).toEqual('Was wonderful');
         expect(readData.Assistance).toEqual('Romeo');
       }
