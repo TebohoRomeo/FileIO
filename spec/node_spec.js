@@ -14,14 +14,14 @@ describe('function save()', () => {
     expect(lebo.save).toBeDefined();
   });
 
-  it("writes a visitor's content to a respectively named file", function() {
+  fit("writes a visitor's content to a respectively named file", function() {
     fs = require('fs');
 
     lebo.save();
 
-    fs.readFile('visitor_Lebo Mphago.json', 'UTF8', function(err, info) {
-      if (err) throw err;
-      else {
+    fs.readFile('visitor_Lebo Mphago.json', 'utf8', function(err, info) {
+      // if (err) throw err;
+      // else {
         let readData = JSON.parse(info);
         expect(readData.fullName).toEqual('Le Mpgago');
         expect(readData.age).toEqual(25);
@@ -29,7 +29,7 @@ describe('function save()', () => {
         expect(readData.time_visit).toEqual('12:12');
         expect(readData.comments).toEqual('Was wonderful');
         expect(readData.Assistance).toEqual('Romeo');
-      }
+      // }
     });
   });
 });
