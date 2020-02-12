@@ -10,20 +10,25 @@ describe('function save()', function() {
     'Romeo'
   );
 
-  it('exists', () => {
+  it('checks if save() is being defined', () => {
     expect(lebo.save).toBeDefined();
   });
 
-  it("writes a visitor's content to a respectively named file", function() {
+  it("Checks if the informaton is being saved.", function() {
     fs = require('fs');
-    
-    fs.readFile('visitor_Lebo Mphago.json', 'utf8', function() {
-        expect(lebo.fullName).toBe('Le Mpgago');
+
+    lebo.save();
+
+    fs.readFile('visitor_Lebo Mphago.json', 'utf8', function(err, info) {
+      if (err) throw err;
+      else {
+        expect(lebo.fullName).toEqual('Le Mpgago');
         expect(lebo.age).toEqual(25);
-        expect(lebo.date_visit).toBe('12/12/12');
+        expect(lebo.date_visit).toEqual('12/12/12');
         expect(lebo.time_visit).toEqual('12:12');
-        expect(lebo.comments).toBe('Was wonderful');
-        expect(lebo.Assistance).toBe('Romeo');
+        expect(lebo.comments).toEqual('Was wonderful');
+        expect(lebo.Assistance).toEqual('Romeo');
+      }
     });
   });
 });
