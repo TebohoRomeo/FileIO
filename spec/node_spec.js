@@ -1,3 +1,6 @@
+// Author : Teboho Romeo Lekhalo
+'use strict';
+
 let Visitor = require('../src/node');
 
 describe('function save()', function() {
